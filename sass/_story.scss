@@ -3,13 +3,20 @@
     &__pictures{
         background-color: $color-primary;
         grid-column: full-start/col-end 4;
+        background-image: linear-gradient(rgba($color-primary,0.5), rgba($color-primary,0.5) ),
+        url(../img/back.jpg);
 
         display: grid;
         grid-template-rows: repeat(6, 1fr);
         grid-template-columns: repeat(6, 1fr);
         align-items: center;
-        background-image: linear-gradient(rgba($color-primary,0.5), rgba($color-primary,0.5) ),
-        url(../img/back.jpg);
+
+
+        @media only screen and (max-width: $bp-medium){
+            grid-column: 1/-1;
+            padding: 6rem;
+        }
+
     }
 
     &__img{
@@ -37,6 +44,11 @@
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
+
+        @media only screen and (max-width: $bp-medium){
+            grid-column: 1/-1;
+            grid-row: 5/6;
+        }
 
         
     }
